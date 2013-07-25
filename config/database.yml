@@ -1,0 +1,27 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: tradr_development
+  pool: 5
+  username: ericmooney
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: tradr_test
+  pool: 5
+  username: ericmooney
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: tradr_production
+  pool: 5
+  username: ericmooney
+  password:
+  host: localhost
