@@ -17,9 +17,8 @@
 
 <p>
   <b>User:</b>
-  <%= @stock.user %>
+  <%= @stock.user.email %>
 </p>
 
 
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>
+<%= link_to 'Back', user_stocks_path %>

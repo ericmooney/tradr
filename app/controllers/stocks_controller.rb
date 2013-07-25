@@ -47,8 +47,12 @@ class StocksController < ApplicationController
     @user = User.find(session[:user_id])
     @stock = Stock.new(params[:stock])
 
+
     respond_to do |format|
       if @stock.save
+        stock_price = StockQuote::Stock.quote(@stock.symbol).last
+        @stock.update_attributes(:starting_price => stock_price)
+
         @stocks = @user.stocks
         format.html { redirect_to @stock, notice: 'Stock was successfully created.' }
         format.js
