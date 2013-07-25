@@ -1,6 +1,8 @@
 <h1>Listing stocks</h1>
 <h2>Cash on hand: <%= number_to_currency(@user.cash) %></h2>
 
+<%= link_to "Refresh", user_stocks_path, :class => "button success", :remote => true %>
+
 <div id="stocks_table">
   <%= render "stocks" %>
 </div>
