@@ -4,6 +4,8 @@
     <th>Quantity</th>
     <th>Starting price</th>
     <th>User</th>
+    <th>Current Trading Price</th>
+    <th>Gross Profit</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,6 +16,8 @@
     <td><%= stock.symbol %></td>
     <td><%= stock.quantity %></td>
     <td><%= stock.starting_price %></td>
+    <td><%= stock.user.email %></td>
+    <td><%= stock.user.email %></td>
     <td><%= stock.user.email %></td>
     <td><%= link_to 'Show', user_stock_path(current_user.id, stock.id) %></td>
     <td><%= link_to 'Edit', edit_user_stock_path(current_user.id, stock.id) %></td>

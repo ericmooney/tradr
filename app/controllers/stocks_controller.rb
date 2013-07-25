@@ -47,6 +47,9 @@ class StocksController < ApplicationController
     @user = User.find(session[:user_id])
     @stock = Stock.new(params[:stock])
 
+    # another format I could have used to avoid the hidden user_id field in the view, use:
+    # @stock = current_user.stocks.build(params[:stock])
+    # @stock.save
 
     respond_to do |format|
       if @stock.save
