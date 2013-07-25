@@ -1,0 +1,6 @@
+var stocks_table = $('#stocks_table');
+
+$('#new_stock > div').remove();
+$('#new_stock').show();
+
+stocks_table.empty().append("<%= j render 'stocks' %>");

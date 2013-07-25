@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="large-3">
+    <%= form_for [@user, @stock], :remote => true do |f| %>
+      <% if @stock.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+          <ul>
+          <% @stock.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :symbol %><br />
+        <%= f.text_field :symbol %>
+      </div>
+      <div class="field">
+        <%= f.label :quantity %><br />
+        <%= f.number_field :quantity %>
+      </div>
+      <div class="field">
+        <%= f.label :starting_price %><br />
+        <%= f.text_field :starting_price %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Save", :class => "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
