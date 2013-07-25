@@ -15,10 +15,10 @@
   <tr>
     <td><%= stock.symbol %></td>
     <td><%= stock.quantity %></td>
-    <td><%= stock.starting_price %></td>
+    <td><%= number_to_currency(stock.starting_price) %></td>
     <td><%= stock.user.email %></td>
-    <td><%= stock.user.email %></td>
-    <td><%= stock.user.email %></td>
+    <td><%= number_to_currency(StockQuote::Stock.quote(stock.symbol).last) %></td>
+    <td><%= number_to_currency((StockQuote::Stock.quote(stock.symbol).last-stock.starting_price)*(stock.quantity)) %></td>
     <td><%= link_to 'Show', user_stock_path(current_user.id, stock.id) %></td>
     <td><%= link_to 'Edit', edit_user_stock_path(current_user.id, stock.id) %></td>
     <td><%= link_to 'Destroy', user_stock_path(current_user.id, stock.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
