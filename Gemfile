@@ -27,6 +27,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem "stock_quote"
+gem "ystock", "~> 0.3.4"
+gem "httparty"
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
